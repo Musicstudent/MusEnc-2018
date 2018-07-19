@@ -10,3 +10,7 @@ g[class='note'] {
 .highlighted {
   fill: blue
 }
+
+#controls {
+  float: right;
+}

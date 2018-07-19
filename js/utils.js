@@ -1,4 +1,5 @@
 function showScore(id, path) {
+  page = 1
   /* Setup and send the request */
   var xhr = new XMLHttpRequest()
   xhr.open('GET', path)
@@ -15,11 +16,27 @@ function showScore(id, path) {
 
         /* Place Verovio's output on the page */
         document.getElementById(id).innerHTML = svg
-        document.querySelector('#d414233e38').style.fill = "Blue"
+        // document.querySelector('#d414233e38').style.fill = "Blue"
       } else {
         /* Tell us an error happened */
         console.log('Error: ' + xhr.status)
       }
     }
   }
+
+  // Set up buttons
+  document.querySelector("#next").addEventListener('click', function() {
+    if (page < vrvToolkit.getPageCount()) {
+      page++
+      var svg = vrvToolkit.renderPage(page)
+      document.getElementById(id).innerHTML = svg
+    }
+  })
+  document.querySelector("#prev").addEventListener('click', function() {
+    if (page > 1) {
+      page--
+      var svg = vrvToolkit.renderPage(page)
+      document.getElementById(id).innerHTML = svg
+    }
+  })
 }
