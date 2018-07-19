@@ -16,8 +16,9 @@ options = {
     pageHeight: defaultHeight * 100 / zoom,
     pageWidth: defaultWidth * 100 / zoom,
     scale: zoom
+
 }
 vrvToolkit.setOptions(options)
 
 /* Show the score */
-showScore('score', 'data/example.mei') // <-- CHANGE THIS TO YOUR FILE
+showScore('score', 'data/projekt.mei') // <-- CHANGE THIS TO YOUR FILE
